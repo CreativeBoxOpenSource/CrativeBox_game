@@ -31,9 +31,9 @@ local fire_node = {
 		name = "fire_basic_flame_animated.png",
 		animation = {
 			type = "vertical_frames",
-			aspect_w = 32,
-			aspect_h = 32,
-			length = 1
+			aspect_w = 16,
+			aspect_h = 16,
+			length = 0.75
 		}}
 	},
 	inventory_image = "fire_basic_flame.png",
@@ -84,7 +84,7 @@ minetest.register_tool("fire:flint_and_steel", {
 		local sound_pos = pointed_thing.above or user:get_pos()
 		minetest.sound_play("fire_flint_and_steel",
 			{pos = sound_pos, gain = 0.5, max_hear_distance = 8})
-		local player_name = user:get_player_name()
+		local player_name = user and user:get_player_name() or ""
 		if pointed_thing.type == "node" then
 			local node_under = minetest.get_node(pointed_thing.under).name
 			local nodedef = minetest.registered_nodes[node_under]
