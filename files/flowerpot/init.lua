@@ -22,6 +22,8 @@ if translator and not minetest.is_singleplayer() then
 	end
 end
 
+local b = "blank.png"
+
 -- Handle plant removal from flowerpot
 local function on_punch(pos, node, puncher)
 	if puncher and not
@@ -76,7 +78,7 @@ local function get_tile(def)
 
 	if drawtype == "mesh" then
 		tiles[2] = "[combine:64x64:0,10=" .. def.inventory_image
-		tiles[3] = "blank.png"
+		tiles[3] = b
 	else
 		local tile = def.tiles[1]
 		if type(tile) == "table" then
@@ -85,9 +87,9 @@ local function get_tile(def)
 
 		if drawtype == "plantlike" then
 			tiles[2] = tile
-			tiles[3] = "blank.png"
+			tiles[3] = b
 		else
-			tiles[2] = "blank.png"
+			tiles[2] = b
 			tiles[3] = tile
 		end
 	end
@@ -130,7 +132,7 @@ end
 local empty = table.copy(pot)
 empty.description = S"Flowerpot"
 empty.mesh = "flowerpot.b3d"
-empty.tiles = {"flowerpot.png", "blank.png", "blank.png"}
+empty.tiles = {"flowerpot.png", b, b}
 empty.selection_box = {
 	type = "fixed",
 	fixed = {-0.25, -0.5, -0.25, 0.25, -0.0625, 0.25}
@@ -186,11 +188,23 @@ minetest.register_craft({
 	}
 })
 
-minetest.after(0, function()
+-- Register pots nodes
+local function register_pots()
 	local register_pot = flowerpot.register_node
 	for node, def in pairs(minetest.registered_nodes) do
-		if def.groups.flora or def.groups.sapling then
+		local groups = def.groups or {}
+		if groups.flora or groups.sapling then
 			register_pot(node)
 		end
 	end
-end)
+end
+
+if minetest.register_on_mods_loaded then
+	minetest.register_on_mods_loaded(function()
+		register_pots()
+	end)
+else -- legacy MultiCraft Engine
+	minetest.after(0, function()
+		register_pots()
+	end)
+end
