@@ -21,6 +21,11 @@ MultiCraft Development Team (CC BY-SA 4.0):
   character_preview.b3d
   hand.b3d
 
-Author of textures
-------------------
+Authors of textures
+-------------------
 MultiCraft Development Team (CC BY-SA 4.0)
+	player_api_*.png
+
+[Hugues Alexandre Ross](https://huguesross.net) (CC BY-SA 4.0)
+(from RPG16 texturepack)
+	character.png

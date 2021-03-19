@@ -166,7 +166,7 @@ function player_api.preview(player, skin)
 	local c = "blank.png"
 	if player then
 		local name = player:get_player_name()
-		local model = models[player_model[name]]
+		local model = models[player_model[name]] or models["character.b3d"]
 		skin = player_textures[name] or model.textures
 		c = "(" .. skin[1] .. "^" .. skin[2] .. ")"
 	elseif skin then
@@ -174,19 +174,19 @@ function player_api.preview(player, skin)
 	end
 
 	local texture = "((" ..
-		"([combine:32x64:0,0=" .. c .. "^[mask:player_api_leg.png)^" ..					-- Left Leg
-		"([combine:32x64:0,0=" .. c .. "^[mask:player_api_leg.png^[transformFX)^" ..	-- Right Leg
+		"([combine:16x32:0,0=" .. c .. "^[mask:player_api_leg.png)^" ..					-- Left Leg
+		"([combine:16x32:0,0=" .. c .. "^[mask:player_api_leg.png^[transformFX)^" ..	-- Right Leg
 
-		"([combine:32x64:-8,-16=" .. c .. "^[mask:player_api_head.png)^" ..				-- Head
+		"([combine:16x32:-4,-8=" .. c .. "^[mask:player_api_head.png)^" ..				-- Head
 
-		"([combine:32x64:-32,-24=" .. c .. "^[mask:player_api_chest.png)^" ..			-- Chest
+		"([combine:16x32:-16,-12=" .. c .. "^[mask:player_api_chest.png)^" ..			-- Chest
 
-		"([combine:32x64:-72,-16=" .. c .. "^[mask:player_api_head.png)^" ..			-- Helmet
+		"([combine:16x32:-36,-8=" .. c .. "^[mask:player_api_head.png)^" ..			-- Helmet
 
-		"([combine:32x64:-88,-24=" .. c .. "^[mask:player_api_arm.png)^" ..				-- Left Arm
-		"([combine:32x64:-88,-24=" .. c .. "^[mask:player_api_arm.png^[transformFX)" ..	-- Right Arm
+		"([combine:16x32:-44,-12=" .. c .. "^[mask:player_api_arm.png)^" ..				-- Left Arm
+		"([combine:16x32:-44,-12=" .. c .. "^[mask:player_api_arm.png^[transformFX)" ..	-- Right Arm
 
-		")^[resize:128x256)^[mask:player_api_transform.png"								-- Full texture
+		")^[resize:64x128)^[mask:player_api_transform.png"								-- Full texture
 
 	return texture
 end
