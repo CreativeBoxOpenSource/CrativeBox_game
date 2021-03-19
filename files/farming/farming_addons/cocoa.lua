@@ -65,7 +65,7 @@ function farming_addons.place_cocoa_bean(itemstack, placer, pointed_thing)
 			pointed_thing) or itemstack
 	end
 
-	local player_name = placer and placer:get_player_name()
+	local player_name = placer and placer:get_player_name() or ""
 
 	if player_name and
 			(minetest.is_protected(pt.under, player_name) or
@@ -327,7 +327,7 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craftitem("farming_addons:chocolate", {
+--[[minetest.register_craftitem("farming_addons:chocolate", {
 	description = S"Chocolate",
 	inventory_image = "farming_addons_chocolate.png",
 	on_use = minetest.item_eat(3),
@@ -341,4 +341,4 @@ minetest.register_craft({
 		{"", "farming_addons:cocoa_bean", ""},
 		{"default:paper", "", ""}
 	}
-})
+})]]
