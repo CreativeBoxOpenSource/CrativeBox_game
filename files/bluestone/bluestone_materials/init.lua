@@ -13,7 +13,7 @@ minetest.register_craft({
 
 -- Bluestone Block
 minetest.register_node("bluestone_materials:bluestoneblock", {
-	description = "Bluestone Block",
+	description = "Yellowstone Block",
 	tiles = {"bluestone_block.png"},
 	paramtype = "light",
 	is_ground_content = false,
