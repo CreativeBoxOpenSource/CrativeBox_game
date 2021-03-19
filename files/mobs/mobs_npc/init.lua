@@ -17,7 +17,7 @@ if minetest.features and minetest.features.object_independent_selectionbox then
 end
 
 local path = minetest.get_modpath("mobs_npc")
-local npc = {"npc", "trader"}
+local npc = {--[["npc",]] "trader"}
 
 for _, name in pairs(npc) do
 	dofile(path .. "/" .. name .. ".lua")
