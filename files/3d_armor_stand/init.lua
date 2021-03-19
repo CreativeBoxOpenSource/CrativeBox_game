@@ -200,7 +200,6 @@ local function register_armor_stand(name, def)
 		after_destruct = update_entity,
 		on_blast = function(pos)
 			drop_armor(pos)
-			armor.drop_armor(pos, "3d_armor_stand:armor_stand")
 			minetest.remove_node(pos)
 		end
 	}
@@ -213,6 +212,10 @@ local function register_armor_stand(name, def)
 	def.material = nil
 
 	minetest.register_node(name, def)
+
+	if mesecon and mesecon.register_mvps_stopper then
+		mesecon.register_mvps_stopper(name)
+	end
 end
 
 
@@ -222,15 +225,19 @@ end
 
 register_armor_stand("3d_armor_stand:armor_stand", {
 	description = S"Apple Wood Armor Stand",
-	tiles = {"3d_armor_stand_platform.png^3d_armor_stand_wood.png"},
-	inventory_image = "3d_armor_stand_platform_inv.png^3d_armor_stand_wood_inv.png",
-	wield_image = "3d_armor_stand_platform_inv.png^3d_armor_stand_wood_inv.png",
+--	tiles = {"3d_armor_stand_platform.png^3d_armor_stand_wood.png"},
+	tiles = {"3d_armor_stand.png"},
+--	inventory_image = "3d_armor_stand_platform_inv.png^3d_armor_stand_wood_inv.png",
+	inventory_image = "3d_armor_stand_wood_inv.png",
+--	wield_image = "3d_armor_stand_platform_inv.png^3d_armor_stand_wood_inv.png",
+	wield_image = "3d_armor_stand_wood_inv.png",
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
 	sounds = default.node_sound_wood_defaults(),
-	material = "default:fence_wood"
+--	material = "default:fence_wood"
+	material = "group:fence_wood"
 })
 
-register_armor_stand("3d_armor_stand:armor_stand_acacia_wood", {
+--[[register_armor_stand("3d_armor_stand:armor_stand_acacia_wood", {
 	description = S"Acacia Wood Armor Stand",
 	tiles = {"3d_armor_stand_platform.png^3d_armor_stand_wood_acacia.png"},
 	inventory_image = "3d_armor_stand_platform_inv.png^3d_armor_stand_wood_acacia_inv.png",
@@ -288,7 +295,7 @@ register_armor_stand("3d_armor_stand:armor_stand_ice", {
 	groups = {choppy = 2, oddly_breakable_by_hand = 2},
 	sounds = default.node_sound_glass_defaults(),
 	material = "default:fence_ice"
-})
+})]]
 
 
 --
