@@ -144,7 +144,7 @@ flowers.datas = {
 		"dandelion_yellow",
 		"Yellow Dandelion",
 		{-0.25, -0.5, -0.25, 0.25, 0, 0.25},
-		{color_yellow = 1}, true
+		{color_yellow = 1}
 	},
 
 	-- Houstonia
@@ -339,9 +339,8 @@ minetest.register_abm({
 minetest.register_node("flowers:mushroom_red", {
 	description = S"Red Mushroom",
 	tiles = {"flowers_mushroom_red.png"},
-	inventory_image = "flowers_mushroom_red_inv.png",
-	drawtype = "mesh",
-	mesh = "flowers_mushroom.b3d",
+	inventory_image = "flowers_mushroom_red.png",
+	drawtype = "plantlike",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -358,9 +357,8 @@ minetest.register_node("flowers:mushroom_red", {
 minetest.register_node("flowers:mushroom_brown", {
 	description = S"Brown Mushroom",
 	tiles = {"flowers_mushroom_brown.png"},
-	inventory_image = "flowers_mushroom_brown_inv.png",
-	drawtype = "mesh",
-	mesh = "flowers_mushroom.b3d",
+	inventory_image = "flowers_mushroom_brown.png",
+	drawtype = "plantlike",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
