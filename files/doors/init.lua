@@ -16,15 +16,6 @@ end
 
 local table_copy = table.copy
 
-local function replace_old_owner_information(pos)
-	local meta = minetest.get_meta(pos)
-	local owner = meta:get_string("doors_owner")
-	if owner and owner ~= "" then
-		meta:set_string("owner", owner)
-		meta:set_string("doors_owner", "")
-	end
-end
-
 -- returns an object to a door object or nil
 function doors.get(pos)
 	local node_name = minetest.get_node(pos).name
@@ -149,9 +140,9 @@ function doors.door_toggle(pos, node, clicker)
 		state = tonumber(state)
 	end
 
-	replace_old_owner_information(pos)
-
-	if clicker and not default.can_interact_with_node(clicker, pos) then
+	local pn = clicker and clicker:get_player_name() or ""
+	if clicker and minetest.is_protected(pos, pn) and
+			not default.can_interact_with_node(clicker, pos) then
 		return false
 	end
 
@@ -395,6 +386,9 @@ function doors.register(name, def)
 	def.is_ground_content = false
 	def.buildable_to = false
 
+	-- MC
+	def.use_texture_alpha = true
+
 	local box = {type = "fixed", fixed = {-0.5, -0.5, -0.5, 0.5, 1.5, -3/8}}
 	def.selection_box = box
 	def.collision_box = box
@@ -414,9 +408,9 @@ end
 function doors.trapdoor_toggle(pos, node, clicker)
 	node = node or minetest.get_node(pos)
 
-	replace_old_owner_information(pos)
-
-	if clicker and not default.can_interact_with_node(clicker, pos) then
+	local pn = clicker and clicker:get_player_name() or ""
+	if clicker and minetest.is_protected(pos, pn) and
+			not default.can_interact_with_node(clicker, pos) then
 		return false
 	end
 
@@ -589,9 +583,9 @@ end
 function doors.fencegate_toggle(pos, node, clicker)
 	node = node or minetest.get_node(pos)
 
-	replace_old_owner_information(pos)
-
-	if clicker and not default.can_interact_with_node(clicker, pos) then
+	local pn = clicker and clicker:get_player_name() or ""
+	if clicker and minetest.is_protected(pos, pn) and
+			not default.can_interact_with_node(clicker, pos) then
 		return false
 	end
 

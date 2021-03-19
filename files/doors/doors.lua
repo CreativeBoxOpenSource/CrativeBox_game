@@ -96,63 +96,7 @@ doors.register("door_steel", {
 	}
 })
 
-doors.register("door_grill", {
-	tiles = {{name = "doors_door_grill.png", backface_culling = true}},
-	description = "Grilled Door",
-	inventory_image = "doors_item_grill.png",
-	protected = true,
-	groups = {cracky = 1, level = 2},
-	sounds = default.node_sound_metal_defaults(),
-	sound_open = "doors_steel_door_open",
-	sound_close = "doors_steel_door_close",
-	recipe = {
-		{"default:grill_bar", "default:grill_bar"},
-		{"default:grill_bar", "default:grill_bar"},
-		{"default:grill_bar", "default:grill_bar"}
-	}
-})
-
--- Aliases
-
-local doors_aliases = {
-	{"acacia_b_1",		"doors:door_acacia_wood_a"},
-	{"acacia_b_2",		"doors:door_acacia_wood_b"},
-	{"acacia_t_1",		"air"},
-	{"acacia_t_2",		"air"},
-	{"birch_b_1",		"doors:door_birch_wood_a"},
-	{"birch_b_2",		"doors:door_birch_wood_b"},
-	{"birch_t_1",		"air"},
-	{"birch_t_2",		"air"},
-	{"dark_oak_b_1",	"doors:door_pine_wood_a"},
-	{"dark_oak_b_2",	"doors:door_pine_wood_b"},
-	{"dark_oak_t_1",	"air"},
-	{"dark_oak_t_2",	"air"},
-	{"jungle_b_1",		"doors:door_jungle_wood_a"},
-	{"jungle_b_2",		"doors:door_jungle_wood_a"},
-	{"jungle_t_1",		"air"},
-	{"jungle_t_2",		"air"},
-	{"wood_b_1",		"doors:door_wood_a"},
-	{"wood_b_2",		"doors:door_wood_b"},
-	{"wood_t_1",		"air"},
-	{"wood_t_2",		"air"},
-	{"steel_b_1",		"doors:door_steel_a"},
-	{"steel_b_2",		"doors:door_steel_b"},
-	{"steel_t_1",		"air"},
-	{"steel_t_2",		"air"},
-	{"wood_room_a",		"doors:door_wood_room_medium"},
-	{"acacia",			"doors:door_acacia_wood"},
-	{"birch",			"doors:door_birch_wood"},
-	{"dark_oak",		"doors:door_pine_wood"},
-	{"jungle",			"doors:door_jungle_wood"}
-}
-
-for i = 1, #doors_aliases do
-	local old, new = unpack(doors_aliases[i])
-	minetest.register_alias("doors:door_" .. old, new)
-end
-
 minetest.register_alias("doors:hidden", "air")
-
 
 --
 -- Trapdoors
@@ -210,6 +154,3 @@ minetest.register_craft({
 	burntime = 10
 })
 
-minetest.register_alias("fences:fencegate_open", "doors:gate_wood_open")
-minetest.register_alias("fences:fencegate", "doors:gate_wood")
-minetest.register_alias("doors:gate_wood_closed", "doors:gate_wood")
