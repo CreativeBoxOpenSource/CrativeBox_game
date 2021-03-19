@@ -6,7 +6,8 @@ dofile(modpath .. "/armor.lua")
 minetest.register_on_joinplayer(function(player)
 	local name = player:get_player_name()
 	local armor_inv = minetest.create_detached_inventory(name .. "_armor", {
-		allow_put = function(_, _, index, stack)
+		allow_put = function(_, _, index, stack, player)
+			if player:get_player_name() == name then
 			local item = minetest.registered_tools[stack:get_name()]
 			local group = item and item.groups
 			if group then
@@ -22,6 +23,13 @@ minetest.register_on_joinplayer(function(player)
 				if group.armor_feet  and index == 4 then
 					return 1
 				end
+				end
+			end
+			return 0
+		end,
+		allow_take = function(inv, listname, index, stack, player)
+			if player:get_player_name() == name then
+				return stack:get_count()
 			end
 			return 0
 		end,

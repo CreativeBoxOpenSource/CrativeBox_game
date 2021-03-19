@@ -22,5 +22,4 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 
 Authors of textures
 -------------------
-Copyright (C) 2013 Vattic
-Copyright (C) 2017-2019 Maksim Gamarnik [MoNTE48] MoNTE48@mail.ua & MultiCraft Development Team
+Copyright (C) 2016 XSSheep (CC-BY-SA 4.0)

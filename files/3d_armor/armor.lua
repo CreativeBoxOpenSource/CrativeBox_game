@@ -26,14 +26,14 @@ armor:register_armor("3d_armor:helmet_diamond", {
 
 armor:register_armor("3d_armor:helmet_emerald", {
 	description = "Emerald Helmet",
-	desc_color = default.colors.emerald,
+--	desc_color = default.colors.emerald,
 	inventory_image = "3d_armor_inv_helmet_emerald.png",
 	groups = {armor_head = 20, armor_heal = 15, armor_use = 1000}
 })
 
 armor:register_armor("3d_armor:helmet_ruby", {
 	description = "Ruby Helmet",
-	desc_color = default.colors.ruby,
+--	desc_color = default.colors.ruby,
 	inventory_image = "3d_armor_inv_helmet_ruby.png",
 	groups = {armor_head = 15, armor_heal = 20}
 })
@@ -44,11 +44,11 @@ armor:register_armor("3d_armor:helmet_chain", {
 	groups = {armor_head = 15, armor_heal = 10, armor_use = 500}
 })
 
-armor:register_armor("3d_armor:helmet_mask", {
+--[[armor:register_armor("3d_armor:helmet_mask", {
 	description = "Underwater Mask",
 	inventory_image = "3d_armor_inv_helmet_mask.png",
 	groups = {armor_head = 1, armor_mask = 10, armor_use = 600, not_in_creative_inventory = 1}
-})
+})]]
 
 -- Regisiter Torso Armor
 
@@ -78,14 +78,14 @@ armor:register_armor("3d_armor:chestplate_diamond",{
 
 armor:register_armor("3d_armor:chestplate_emerald", {
 	description = "Emerald Chestplate",
-	desc_color = default.colors.emerald,
+--	desc_color = default.colors.emerald,
 	inventory_image = "3d_armor_inv_chestplate_emerald.png",
 	groups = {armor_torso = 30, armor_heal = 15, armor_use = 1000}
 })
 
 armor:register_armor("3d_armor:chestplate_ruby", {
 	description = "Ruby Chestplate",
-	desc_color = default.colors.ruby,
+--	desc_color = default.colors.ruby,
 	inventory_image = "3d_armor_inv_chestplate_ruby.png",
 	groups = {armor_torso = 25, armor_heal = 15}
 })
@@ -124,14 +124,14 @@ armor:register_armor("3d_armor:leggings_diamond", {
 
 armor:register_armor("3d_armor:leggings_emerald", {
 	description = "Emerald Leggings",
-	desc_color = default.colors.emerald,
+--	desc_color = default.colors.emerald,
 	inventory_image = "3d_armor_inv_leggings_emerald.png",
 	groups = {armor_legs = 25, armor_heal = 15, armor_use = 1000}
 })
 
 armor:register_armor("3d_armor:leggings_ruby", {
 	description = "Ruby Leggings",
-	desc_color = default.colors.ruby,
+--	desc_color = default.colors.ruby,
 	inventory_image = "3d_armor_inv_leggings_ruby.png",
 	groups = {armor_legs = 20, armor_heal = 15}
 })
@@ -170,14 +170,14 @@ armor:register_armor("3d_armor:boots_diamond", {
 
 armor:register_armor("3d_armor:boots_emerald", {
 	description = "Emerald Boots",
-	desc_color = default.colors.emerald,
+--	desc_color = default.colors.emerald,
 	inventory_image = "3d_armor_inv_boots_emerald.png",
 	groups = {armor_feet = 20, armor_heal = 15, armor_use = 1000}
 })
 
 armor:register_armor("3d_armor:boots_ruby", {
 	description = "Ruby Boots",
-	desc_color = default.colors.ruby,
+--	desc_color = default.colors.ruby,
 	inventory_image = "3d_armor_inv_boots_ruby.png",
 	groups = {armor_feet = 15, armor_heal = 15}
 })
