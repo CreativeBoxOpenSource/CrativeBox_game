@@ -1,9 +1,24 @@
-local dyes = dye.dyes
+local colors = {
+	{"black",		"#000000b0"},
+	{"blue",		"#015dbb70"},
+	{"brown",		"#663300a0"},
+	{"cyan",		"#01ffd870"},
+	{"dark_green",	"#005b0770"},
+	{"dark_grey",	"#303030b0"},
+	{"green",		"#61ff0170"},
+	{"grey",		"#5b5b5bb0"},
+	{"magenta",		"#ff05bb70"},
+	{"orange",		"#ff840170"},
+	{"pink",		"#ff65b570"},
+	{"red",			"#ff0000a0"},
+	{"violet",		"#2000c970"},
+	{"white",		"#abababc0"},
+	{"yellow",		"#e3ff0070"}
+}
 
-for i = 1, #dyes do
-	local name = unpack(dyes[i])
-
-	mobs:register_mob("mobs_animal:sheep_" .. name, {
+-- Sheep by PilzAdam, texture converted to minetest by AMMOnym from Summerfield pack
+for _, col in pairs(colors) do
+	mobs:register_mob("mobs_animal:sheep_" .. col[1], {
 		stay_near = {"farming:straw", 10},
 		type = "animal",
 		passive = true,
@@ -12,8 +27,8 @@ for i = 1, #dyes do
 		collisionbox = {-0.4, -1, -0.4, 0.4, 0.3, 0.4},
 		visual = "mesh",
 		mesh = "mobs_sheep.b3d",
-		textures = {"mobs_sheep.png^mobs_sheep_" .. name .. ".png"},
-		gotten_texture = {"mobs_sheep.png^mobs_sheep_shaved.png"},
+		textures = {"mobs_sheep_base.png^(mobs_sheep_wool.png^[colorize:" .. col[2] .. ")"},
+		gotten_texture = {"mobs_sheep_base.png^mobs_sheep_shaved.png"},
 		gotten_mesh = "mobs_sheep_shaved.b3d",
 		makes_footstep_sound = true,
 		sounds = {
@@ -29,7 +44,7 @@ for i = 1, #dyes do
 			return {
 				{name = "mobs:meat_raw"},
 				{name = "mobs:meat_raw", chance = 2},
-				{name = "wool:" .. name}
+				{name = "wool:"..col[1]}
 			}
 		end,
 		animation = {
@@ -54,7 +69,7 @@ for i = 1, #dyes do
 				self.gotten = false
 
 				self.object:set_properties({
-					textures = {"mobs_sheep.png^mobs_sheep_" .. name .. ".png"},
+					textures = {"mobs_sheep_base.png^(mobs_sheep_wool.png^[colorize:" .. col[2] .. ")"},
 					mesh = "mobs_sheep.b3d"
 				})
 			end
@@ -67,7 +82,7 @@ for i = 1, #dyes do
 				if self.food and self.food > 6 then
 					self.gotten = false
 					self.object:set_properties({
-						textures = {"mobs_sheep.png^mobs_sheep_" .. name .. ".png"},
+						textures = {"mobs_sheep_base.png^(mobs_sheep_wool.png^[colorize:" .. col[2] .. ")"},
 						mesh = "mobs_sheep.b3d"
 					})
 				end
@@ -86,11 +101,11 @@ for i = 1, #dyes do
 					and self.tamed
 					and player == self.owner then
 				minetest.item_drop(
-					ItemStack("wool:" .. name .. " " .. math.random(3)), nil, pos)
+					ItemStack("wool:" .. col[1] .. " " .. math.random(3)), nil, pos)
 				item:add_wear(65535/100) -- 100 uses
 				clicker:set_wielded_item(item)
 				self.object:set_properties({
-					textures = {"mobs_sheep.png^mobs_sheep_shaved.png"},
+					textures = {"mobs_sheep_base.png^mobs_sheep_shaved.png"},
 					mesh = "mobs_sheep_shaved.b3d"
 				})
 				self.gotten = true -- shaved
@@ -104,7 +119,8 @@ for i = 1, #dyes do
 					and self.tamed
 					and player == self.owner then
 				local color = itemname:split(":")[2]
-				if name == color then return end
+
+				if col[1] == color then return end
 				local mob = minetest.add_entity(pos, "mobs_animal:sheep_" .. color)
 				local infotext, nametag = self.infotext or "", self.nametag or ""
 				self.object:remove()
@@ -126,15 +142,12 @@ for i = 1, #dyes do
 				end
 				return
 			end
-
 		--	if mobs:capture_mob(self, clicker, 0, 5, 60, false, nil) then return end
 		end
 	})
-
-	minetest.register_alias("mobs_animal:sheep_" .. name, "mobs_animal:sheep_white")
 end
 
-mobs:register_egg("mobs_animal:sheep_white", mobs_animal.S"Sheep Egg", "wool_white.png", true)
+mobs:register_egg("mobs_animal:sheep_white", mobs_animal.S"Sheep", "mobs_sheep_egg.png")
 
 mobs:spawn({
 	name = "mobs_animal:sheep_white",

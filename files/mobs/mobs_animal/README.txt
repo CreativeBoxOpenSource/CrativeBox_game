@@ -37,4 +37,7 @@ Allowed to be used in non-official builds ONLY for personal use.
 
 * Exceptions:
 mobs_bunny_*.png by ExeterDad (CC-BY-SA 3.0)
-mobs_pig.png, mobs_pig_egg.png by MultiCraft Development Team (CC-BY-SA 4.0)
+mobs_pig.png by MultiCraft Development Team (CC-BY-SA 4.0)
+mobs_sheep_{shaved, wool}.png - converted to minetest by AMMOnym from Summerfield pack
+
+*_egg.png textures derived from XSSheep texture pack by Pixel Perfection (CC-BY-SA 4.0)
