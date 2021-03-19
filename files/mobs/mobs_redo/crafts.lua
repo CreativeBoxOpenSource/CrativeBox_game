@@ -142,7 +142,7 @@ minetest.register_craftitem("mobs:chicken_egg", {
 minetest.register_alias("mobs:egg", "air")
 
 -- fried egg
-minetest.register_craftitem("mobs:chicken_egg_fried", {
+--[[minetest.register_craftitem("mobs:chicken_egg_fried", {
 	description = S"Fried Egg",
 	inventory_image = "mobs_chicken_egg_fried.png",
 	on_use = minetest.item_eat(2),
@@ -153,7 +153,7 @@ minetest.register_craft({
 	type = "cooking",
 	recipe = "mobs:chicken_egg",
 	output = "mobs:chicken_egg_fried"
-})
+})]]
 
 -- raw chicken
 minetest.register_craftitem("mobs:chicken_raw", {
@@ -178,7 +178,7 @@ minetest.register_craft({
 })
 
 -- cheese wedge
-minetest.register_craftitem("mobs:cheese", {
+--[[minetest.register_craftitem("mobs:cheese", {
 	description = S"Cheese",
 	inventory_image = "mobs_cheese.png",
 	wield_image = "mobs_cheese_wield.png",
@@ -217,7 +217,7 @@ minetest.register_craft({
 	recipe = {
 		{"mobs:cheeseblock"}
 	}
-})
+})]]
 
 -- rotten flesh
 minetest.register_craftitem("mobs:rotten_flesh", {
