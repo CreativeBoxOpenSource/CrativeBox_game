@@ -25,3 +25,6 @@ Allowed to be used in non-official builds ONLY for personal use.
 * Exceptions:
 mobs_spider.png, mobs_spider_grey.png, mobs_spider_orange.png by AspireMint (CC-BY-SA 3.0)
 mobs_monster_egg.png by MultiCraft Development Team, based on mobs_spider.png
+
+mobs_monster_small_spider.png, mobs_monster_spider.png, mobs_skeleton_inv.png, zombie_inv.png
+derived from XSSheep texture pack by Pixel Perfection (CC-BY-SA 4.0)
