@@ -76,7 +76,7 @@ minetest.register_tool("default:pick_diamond", {
 })
 
 minetest.register_tool("default:pick_emerald", {
-	description = default.colors.emerald .. Sl("Emerald Pickaxe"),
+	description = Sl("Emerald Pickaxe"),
 	inventory_image = "default_tool_emeraldpick.png",
 	tool_capabilities = {
 		full_punch_interval = 0.9,
@@ -90,7 +90,7 @@ minetest.register_tool("default:pick_emerald", {
 })
 
 minetest.register_tool("default:pick_ruby", {
-	description = default.colors.ruby .. Sl("Ruby Pickaxe"),
+	description = Sl("Ruby Pickaxe"),
 	inventory_image = "default_tool_rubypick.png",
 	tool_capabilities = {
 		full_punch_interval = 0.9,
@@ -185,7 +185,7 @@ minetest.register_tool("default:shovel_diamond", {
 })
 
 minetest.register_tool("default:shovel_emerald", {
-	description = default.colors.emerald .. Sl("Emerald Shovel"),
+	description = Sl("Emerald Shovel"),
 	inventory_image = "default_tool_emeraldshovel.png",
 	wield_image = "default_tool_emeraldshovel.png^[transformR90",
 	tool_capabilities = {
@@ -200,7 +200,7 @@ minetest.register_tool("default:shovel_emerald", {
 })
 
 minetest.register_tool("default:shovel_ruby", {
-	description = default.colors.ruby .. Sl("Ruby Shovel"),
+	description = Sl("Ruby Shovel"),
 	inventory_image = "default_tool_rubyshovel.png",
 	wield_image = "default_tool_rubyshovel.png^[transformR90",
 	tool_capabilities = {
@@ -291,7 +291,7 @@ minetest.register_tool("default:axe_diamond", {
 })
 
 minetest.register_tool("default:axe_emerald", {
-	description = default.colors.emerald .. Sl("Emerald Axe"),
+	description = Sl("Emerald Axe"),
 	inventory_image = "default_tool_emeraldaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 0.9,
@@ -305,7 +305,7 @@ minetest.register_tool("default:axe_emerald", {
 })
 
 minetest.register_tool("default:axe_ruby", {
-	description = default.colors.ruby .. Sl("Ruby Axe"),
+	description = Sl("Ruby Axe"),
 	inventory_image = "default_tool_rubyaxe.png",
 	tool_capabilities = {
 		full_punch_interval = 0.9,
@@ -380,7 +380,7 @@ minetest.register_tool("default:sword_diamond", {
 })
 
 minetest.register_tool("default:sword_emerald", {
-	description = default.colors.emerald .. Sl("Emerald Sword"),
+	description = Sl("Emerald Sword"),
 	inventory_image = "default_tool_emeraldsword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.7,
@@ -391,7 +391,7 @@ minetest.register_tool("default:sword_emerald", {
 })
 
 minetest.register_tool("default:sword_ruby", {
-	description = default.colors.ruby .. Sl("Ruby Sword"),
+	description = Sl("Ruby Sword"),
 	inventory_image = "default_tool_rubysword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.7,

@@ -45,7 +45,7 @@ end
 -- Rain
 weather.register("rain", {
 	falling_speed = 5,
-	amount = 7,
+	amount = 5,
 	size = 25,
 	height = 3,
 	vertical = true,

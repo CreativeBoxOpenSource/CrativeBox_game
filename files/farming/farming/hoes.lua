@@ -41,7 +41,7 @@ farming.register_hoe("farming:hoe_diamond", {
 })
 
 farming.register_hoe("farming:hoe_emerald", {
-	description = default.colors.emerald .. S"Emerald Hoe",
+	description = S"Emerald Hoe",
 	inventory_image = "farming_tool_emeraldhoe.png",
 	max_uses = 1000,
 	material = "default:emerald",
@@ -49,7 +49,7 @@ farming.register_hoe("farming:hoe_emerald", {
 })
 
 farming.register_hoe("farming:hoe_ruby", {
-	description = default.colors.ruby .. S"Ruby Hoe",
+	description = S"Ruby Hoe",
 	inventory_image = "farming_tool_rubyhoe.png",
 	max_uses = -1,
 	material = "default:ruby",

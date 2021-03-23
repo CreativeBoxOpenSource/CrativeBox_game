@@ -130,7 +130,11 @@ minetest.register_node("default:dirt", {
 
 minetest.register_node("default:dirt_with_grass", {
 	description = "Dirt with Grass",
-	tiles = {"default_grass.png", "default_dirt.png", "default_grass_side.png"},
+-- C
+	tiles = {"default_grass.png", {name = "default_dirt.png", color = "white"}},
+	overlay_tiles = {"", "", "default_grass_side.png"},
+	color = "#55aa60",
+-- C END
 	groups = {crumbly = 3, soil = 1, spreading_dirt_type = 1},
 	drop = "default:dirt",
 	sounds = default.node_sound_dirt_defaults({
@@ -892,7 +896,7 @@ minetest.register_node("default:goldblock", {
 })
 
 minetest.register_node("default:stone_with_emerald", {
-	description = default.colors.emerald .. Sl("Emerald Ore"),
+	description = Sl("Emerald Ore"),
 	tiles = {"default_stone.png^default_mineral_emerald.png"},
 	groups = {cracky = 2, not_cuttable = 1},
 	drop = "default:emerald",
@@ -900,14 +904,14 @@ minetest.register_node("default:stone_with_emerald", {
 })
 
 minetest.register_node("default:emeraldblock", {
-	description = default.colors.emerald .. Sl("Emerald Block"),
+	description = Sl("Emerald Block"),
 	tiles = {"default_emerald_block.png"},
 	groups = {cracky = 1},
 	sounds = default.node_sound_stone_defaults()
 })
 
 minetest.register_node("default:rubyblock", {
-	description = default.colors.ruby .. Sl("Ruby Block"),
+	description = Sl("Ruby Block"),
 	tiles = {"default_ruby_block.png"},
 	groups = {cracky = 1},
 	sounds = default.node_sound_stone_defaults()
@@ -1043,6 +1047,8 @@ minetest.register_node("default:dry_grass", {
 	sounds = default.node_sound_leaves_defaults()
 })
 
+-- C
+--[[
 minetest.register_node("default:bush_stem", {
 	description = "Bush Stem",
 	drawtype = "plantlike",
@@ -1255,6 +1261,7 @@ minetest.register_node("default:pine_bush_sapling", {
 		return itemstack
 	end
 })
+]]-- END
 
 --
 -- Liquids
@@ -1624,7 +1631,7 @@ local function update_bookshelf(pos)
 end
 
 -- LBM for updating Bookshelf
-minetest.register_lbm({
+--[[minetest.register_lbm({
 	label = "Bookshelf updater",
 	name = "default:bookshelf_updater",
 	nodenames = "default:bookshelf",
@@ -1635,14 +1642,14 @@ minetest.register_lbm({
 			meta:set_string("version", "2")
 		end
 	end
-})
+})]]
 
 minetest.register_node("default:bookshelf", {
 	description = "Bookshelf",
 	tiles = {
 		"default_wood.png", "default_wood.png",
 		"default_wood.png", "default_wood.png",
-		"default_wood.png^default_bookshelf.png", "default_wood.png^default_bookshelf.png"
+		"default_bookshelf.png", "default_bookshelf.png"
 	},
 	paramtype2 = "facedir",
 	is_ground_content = false,
@@ -1759,7 +1766,7 @@ default.register_ladder("default:ladder_cherry_blossom_wood", {
 	material = "default:cherry_blossom_wood"
 })
 
-default.register_ladder("default:ladder_steel", {
+--[[default.register_ladder("default:ladder_steel", {
 	description = "Steel Ladder",
 	tiles = {"default_ladder_steel_tile.png"},
 	inventory_image = "default_ladder_steel.png",
@@ -1803,7 +1810,7 @@ minetest.register_node("default:grill_bar", {
 	},
 	groups = {choppy = 2, oddly_breakable_by_hand = 3},
 	sounds = default.node_sound_metal_defaults()
-})
+})]]
 
 
 default.register_fence("default:fence_wood", {
@@ -1861,7 +1868,7 @@ default.register_fence("default:fence_cherry_blossom_wood", {
 })
 
 
-default.register_fence("default:fence_ice", {
+--[[default.register_fence("default:fence_ice", {
 	description = "Ice Fence",
 	texture = "default_ice.png",
 	inventory_image = "default_fence_ice.png",
@@ -1869,7 +1876,7 @@ default.register_fence("default:fence_ice", {
 	material = "default:ice",
 	groups = {cracky = 3, cools_lava = 1, flammable = 2},
 	sounds = default.node_sound_glass_defaults()
-})
+})]]
 
 
 minetest.register_node("default:vine", {

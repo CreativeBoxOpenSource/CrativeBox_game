@@ -203,12 +203,12 @@ minetest.register_craftitem("default:gold_ingot", {
 })
 
 minetest.register_craftitem("default:emerald", {
-	description = default.colors.emerald .. Sl("Emerald"),
+	description = Sl("Emerald"),
 	inventory_image = "default_emerald.png"
 })
 
 minetest.register_craftitem("default:ruby", {
-	description = default.colors.ruby .. Sl("Ruby"),
+	description = Sl("Ruby"),
 	inventory_image = "default_ruby.png"
 })
 

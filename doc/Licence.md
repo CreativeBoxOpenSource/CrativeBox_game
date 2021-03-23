@@ -1,13 +1,15 @@
-MultiCraft_game | Open Source
+MyCraft_game | Open Source
 =============================
 
-MultiCraft_game is based on the [Minetest Game](https://github.com/minetest/minetest_game), which is developed by a [number of contributors](https://github.com/minetest/minetest_game/graphs/contributors).
+MyCraft_game is based on the [MultiCraft Game](https://github.com/MultiCraft/MultiCraft_game) and [Minetest Game](https://github.com/minetest/minetest_game),
+which is developed by a number of contributors: [MultiCraft](https://github.com/MultiCraft/MultiCraft_game/graphs/contributors), [Minetest](https://github.com/minetest/minetest_game/graphs/contributors).
 It also uses many mods from various developers with various licenses. Carefully read the README and LICENSE files in each folder.
 
 Copyright © 2014-2020 Maksim Gamarnik [MoNTE48] <MoNTE48@mail.ua>
 Copyright © 2014-2020 MultiCraft Development Team
+Copyright © 2020-2021 MyCraft Open Source
 
-MultiCraft_game is licensed under LGPLv3 (or higher). Resources games licensed under CC-BY-SA 4.0, unless otherwise stated.
+MyCraft_game is licensed under LGPLv3 (or higher). Resources games licensed under CC-BY-SA 4.0, unless otherwise stated.
 
 **Be sure to look at the information, and a license in every mods!**
 
@@ -55,44 +57,14 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 License of media (textures)
 ===========================
 
-Copyright (C) 2013 Vattic
+Copyright (C) XSSheep
 
-http://www.minecraftforum.net/topic/72747-/
+Pixel Perfection:
+https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/1242533-pixel-perfection-now-with-polar-bears-1-11
 
-Vattic's Terms:
-	Things that are fine:
-	- Use as placeholders.
-	- Using as many textures as you've made yourself.
-	- Using the items or paintings.
-	- Use as base for mod textures.
+Feel free to use these textures in any mixpack, project, game or whatever you want (paid or unpaid). However, I'd appreciate it if I was credited for all the hard work I've put into these textures.
 
-	Requirements:
-	- Give clear credit.
-	- Link back to the Faithful 32x32 thread.
-	- Be honest about what you are using.
-	- No money making links.
-
-	On remix/tweaked packs:
-	- Let's Players can share a modified copy with fans.
-	- Adventure map makers can provide modified copy to go along with it.
-
-	If either of the above apply:
-	- You must distribute through YouTube video descriptions or your series'/map's forum topic and not create a separate thread for the pack.
-	- To avoid people uploading a video just so they can upload a copy of the pack Let's Players must have a decent number of videos that use the pack and a decent number of subscribers.
-
-	Finally:
-	- If I decide I don't want you using stuff from the pack then that is final. This will only be the case in unusual circumstances.
-	- These guidelines can be changed at any time.
-
---- --- ---
-
-Copyright (C) 2014 HiTeeN
-
-https://www.minecraftforum.net/forums/mapping-and-modding-java-edition/resource-packs/1242446-faithful-64x64
-
-You can use my texture pack on the following conditions:
-You must specify a link on this topic in their publications.
-If your package contains more than 80% of my textures, you have no right to publish them.
+Pixel Perfection by XSSheep is licensed under a Creative Commons Attribution-Share Alike 4.0 International License.
 
 --- --- ---
 

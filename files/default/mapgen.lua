@@ -1352,6 +1352,8 @@ function default.register_decorations()
 
 	-- Bush
 
+-- C
+--[[
 	minetest.register_decoration({
 		name = "default:bush",
 		deco_type = "schematic",
@@ -1415,6 +1417,8 @@ function default.register_decorations()
 		schematic = minetest.get_modpath("default") .. "/schematics/pine_bush.mts",
 		flags = "place_center_x, place_center_z",
 	})
+]]
+-- C END
 
 	-- Grasses
 

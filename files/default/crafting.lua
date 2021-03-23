@@ -36,27 +36,6 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "default:wood",
-	recipe = {
-		{"default:bush_stem"}
-	}
-})
-
-minetest.register_craft({
-	output = "default:acacia_wood",
-	recipe = {
-		{"default:acacia_bush_stem"}
-	}
-})
-
-minetest.register_craft({
-	output = "default:pine_wood",
-	recipe = {
-		{"default:pine_bush_stem"}
-	}
-})
-
-minetest.register_craft({
 	output = "default:cherry_blossom_wood 4",
 	recipe = {
 		{"default:cherry_blossom_tree"}
@@ -252,14 +231,14 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
+--[[minetest.register_craft({
 	output = "default:grill_bar 4",
 	recipe = {
 		{"default:steel_ingot", "", "default:steel_ingot"},
 		{"", "default:steel_ingot", ""},
 		{"default:steel_ingot", "", "default:steel_ingot"}
 	}
-})
+})]]
 
 minetest.register_craft({
 	output = "default:stonebrick",
@@ -471,24 +450,6 @@ minetest.register_craft({
 	type = "fuel",
 	recipe = "group:tree",
 	burntime = 15
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "default:bush_sapling",
-	burntime = 3,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "default:acacia_bush_sapling",
-	burntime = 4,
-})
-
-minetest.register_craft({
-	type = "fuel",
-	recipe = "default:pine_bush_sapling",
-	burntime = 2,
 })
 
 minetest.register_craft({
