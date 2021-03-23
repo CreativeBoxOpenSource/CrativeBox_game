@@ -31,6 +31,13 @@ https://opensource.org/licenses/MIT
 
 Licenses of media (models and sounds)
 ------------------------------------
+
+CC-0, see: https://creativecommons.org/share-your-work/public-domain/cc0/, except
+if other license is mentioned.
+
+hexafraction, modified by sofar
+	carts_rail_*.png
+
 stujones11 - CC-BY-SA 4.0
 	carts_cart.b3d
 
