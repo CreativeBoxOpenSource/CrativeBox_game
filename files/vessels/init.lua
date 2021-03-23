@@ -48,10 +48,10 @@ local function update_vessels_shelf(pos)
 	end
 	meta:set_string("formspec", formspec)
 	if n_potions + n_empty == 0 then
-		meta:set_string("infotext", S("Empty Potion Shelf"))
+		meta:set_string("infotext", S"Empty Potion Shelf")
 	else
-		meta:set_string("infotext", S("Potion Shelf") .. "\n(" ..
-			S("Potions:") .. " " .. n_potions .. ", " .. S("Bottles:") .. " " .. n_empty .. ")")
+		meta:set_string("infotext", S"Potion Shelf" .. "\n(" ..
+			S("Potions: @1", n_potions) .. ", " .. S("Bottles @1:", n_empty) .. ")")
 	end
 
 	meta:set_string("version", "2")
@@ -127,7 +127,7 @@ minetest.register_craft({
 })
 
 minetest.register_node("vessels:glass_bottle", {
-	description = "Empty Glass Bottle",
+	description = S"Empty Glass Bottle",
 	drawtype = "plantlike",
 	tiles = {"[combine:32x32:0,2=vessels_glass_bottle.png"},
 	wield_image = "vessels_glass_bottle.png",
@@ -159,7 +159,7 @@ minetest.register_craft({
 })
 
 -- LBM for updating Potion Shelf
-minetest.register_lbm({
+--[[minetest.register_lbm({
 	label = "Potion Shelf updater",
 	name = "vessels:shelf_updater",
 	nodenames = "vessels:shelf",
@@ -169,4 +169,4 @@ minetest.register_lbm({
 			update_vessels_shelf(pos)
 		end
 	end
-})
+})]]
