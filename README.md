@@ -1,7 +1,7 @@
 CrativeBox_game | Open Source
 =============================
 
-CrativeBox_game is an Open Source game for MultiCraft Engine.
+CrativeBox_game is an Open Source game for MultiCraft Engine. 
 
 CrativeBox_game is based on the [MultiCraft Game](https://github.com/MultiCraft/MultiCraft_game) and [Minetest Game](https://github.com/minetest/minetest_game),
 which is developed by a number of contributors: [MultiCraft](https://github.com/MultiCraft/MultiCraft_game/graphs/contributors), [Minetest](https://github.com/minetest/minetest_game/graphs/contributors).
